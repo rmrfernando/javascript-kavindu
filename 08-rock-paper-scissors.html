@@ -16,24 +16,35 @@
 		<button onclick="resetGame()">Reset Game</button>
 
 		<script>
-			const score = {
+			//defualt value after ||
+			let score = JSON.parse(localStorage.getItem("score")) || {
 				wins: 0,
 				losses: 0,
 				ties: 0,
 			};
 
-			function resetGame(){
-				 
+			//score === null
+			// if (!score) {
+			// 	score = {
+			// 		wins: 0,
+			// 		losses: 0,
+			// 		ties: 0,
+			// 	};
+			// }
+
+			function resetGame() {
 				let reset = prompt(`Reset Game scores ? type yes to reset `);
-				
-				if(reset == "yes"){
+
+				if (reset == "yes") {
 					score.losses = 0;
 					score.ties = 0;
 					score.wins = 0;
 
+					localStorage.removeItem("score");
+
 					alert(`Game is reset`);
 				}
-			} 
+			}
 
 			function playGame(playerMove) {
 				const computerMove = pickComputerMove();
@@ -82,6 +93,8 @@
 						result = "You won";
 						score.wins++;
 					}
+
+					localStorage.setItem("score", JSON.stringify(score));
 
 					alert(
 						`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
