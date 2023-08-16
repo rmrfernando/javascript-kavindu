@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Objects</title>
+	</head>
+	<body>
+		<script>
+			//create object
+			const products = {
+				name: "socks",
+				price: 1090,
+			};
+
+			//use properties of objects
+			console.log(products);
+			// console.log(typeof products);
+			console.log(products.name);
+			console.log(products.price);
+
+			// change data on objects
+			products.name = "cotton socks";
+			console.log(products);
+
+			// create a new property
+			products.newProperty = true;
+			console.log(products);
+
+			// delete a property
+			delete products.newProperty;
+			console.log(products);
+		</script>
+	</body>
+</html>

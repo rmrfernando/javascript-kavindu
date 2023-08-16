@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booleans</title>
+  </head>
+  <body>
+    <script>
+      //   console.log(typeof true);
+
+      //   console.log(3 > 5 - 5);
+
+      //   console.log(5 === "5.00");
+
+      //   const age = 15;
+
+      //   if (age >= 16) {
+      //     console.log("you can drive");
+      //   } else if (age >= 14) {
+      //     console.log("Almost there");
+      //   } else {
+      //     console.log("You cant drive");
+      //   }
+
+      //truthy and falsy values
+      /*if (5) {
+        console.log("truthy");
+      }
+
+      const cartQuantity = 5;
+
+      if (cartQuantity) {
+        console.log("cart has products");
+      }
+
+      console.log(!0);
+
+      //NAN
+      console.log('true'/5);
+
+      //undefined
+      let variable1;
+      console.log(variable1);
+*/
+      //ternery operator
+      //   const result = 0 ? "truthy" : "falsy";
+      //   console.log(result);
+
+      //guard operator
+
+      //   false && console.log("hello");
+
+      //   const message = false && "hello";
+      //   console.log(message);
+
+      //default operator
+
+      //   const currency = "EUR" || "USD";
+      //   console.log(currency);
+
+      //   const currency = undefined || "USD";
+      //   console.log(currency);
+
+      //6a, 6b
+      //   let hour = 11;
+      //   const name = "kavindu";
+
+      //   if (hour >= 6 && hour < 12) {
+      //     console.log(`Good morning ${name}`);
+      //   } else if (hour > 12 && hour < 17) {
+      //     console.log(`Good afternoon ${name}`);
+      //   }
+
+      //   const age = 6;
+      //   const holiday = true;
+
+      //   if ((age <= 6 || age >= 65) && holiday == true) {
+      //     console.log("Discount");
+      //   } else {
+      //     console.log("No discount");
+      //   }
+
+      let randomNumber = Math.random();
+      let result = "";
+      const guess = "Heads";
+      let score;
+
+      if (randomNumber < 0.5) {
+        result = "Heads";
+      } else {
+        result = "Tails";
+      }
+
+      if (result == guess) {
+        score = 1;
+      } else {
+        score = 0;
+      }
+
+      const print = score ? "you won" : "you lose";
+      console.log(print);
+    </script>
+  </body>
+</html>
