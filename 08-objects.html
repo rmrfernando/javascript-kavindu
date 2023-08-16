@@ -30,6 +30,55 @@
 			// delete a property
 			delete products.newProperty;
 			console.log(products);
+
+			const product2 = {
+    name:'shirt',
+    ['delivery-time']: '1 day', // this can be written without the two square brackets
+
+    //nested object
+
+    rating:{
+      starts: 4.5,
+      count: 87
+    },
+
+    fun: function function1() {
+      console.log('function inside object');
+    }
+
+  };
+
+  console.log(product2);
+
+  //dot notation
+  console.log(product2.name);
+
+  // bracet notation
+  console.log(product2['name']);
+
+  console.log(product2['delivery-time']); // cant use this with dot notation cuz js thinks it is subtraction
+  
+  console.log(product2.rating.count);
+
+  product2.fun();
+
+  console.log(typeof console.log);
+
+  //convert to JSON
+  console.log(JSON.stringify(product2));
+
+  //convert JSON to object
+  const jsonString = JSON.stringify(product2);
+  console.log(JSON.parse(jsonString));
+
+  //save in local storage only strings can be svaed in local storage
+
+  localStorage.setItem('message', 'hello');
+
+  //get an item from local storage
+  console.log(localStorage.getItem('message'));
+
+
 		</script>
 	</body>
 </html>
