@@ -91,7 +91,7 @@
   console.log(itemCart);
 */
 
-			console.log("hello".length);
+			/*console.log("hello".length);
 			console.log("hello".toUpperCase());
 
 			const object1 = {
@@ -136,6 +136,55 @@
 			};
 			console.log(object5);
 			object5.method();
+
+*/
+
+      //exercises 
+
+      const itemCart = {
+        product1 : {
+          name:'basketball',
+          price: 2095,
+          ['delivery-time']: '3 day'
+        },
+
+        product2 : {
+          name:'tennisball',
+          price: 1050,
+          ['delivery-time']: '3 day'
+        }
+        
+      };
+
+      console.log(itemCart);
+
+      itemCart.price = itemCart.price + 500;
+      console.log(itemCart.price);
+
+      console.log(itemCart);
+
+      function comparePrice(product1, product2){
+        if(product1.price < product2.price){
+          return product1;
+        }else{
+          return product2;
+      }
+    }
+    
+      function isSameProduct(product1, product2){
+        if(product1.price == product2.price && product1.name == product2.name){
+          return true;
+        }else{
+          return false;
+      }
+    }
+
+    console.log(isSameProduct(itemCart.product1, itemCart.product2));
+    console.log(comparePrice(itemCart.product1, itemCart.product2));
+
+    console.log('Good Morning'.toLowerCase());
+    console.log('Good Morning'.repeat(2));
+
 		</script>
 	</body>
 </html>
