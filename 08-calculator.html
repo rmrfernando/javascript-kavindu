@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Calculator</title>
+
+		<style>
+			html {
+				background-color: black;
+			}
+			button {
+				padding: 5px;
+				width: 60px;
+				height: 60px;
+				margin: 8px;
+				margin-left: 2px;
+				margin-right: 2px;
+				border-radius: 50px;
+				border: none;
+				color: white;
+				font-weight: 400;
+				font-size: 28px;
+				background-color: rgb(55, 55, 55);
+			}
+
+			.op {
+				background-color: orange;
+			}
+
+			.clear {
+				font-size: 18px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<button onclick="updateCalculation('1')">1</button>
+			<button onclick="updateCalculation('2')">2</button>
+			<button onclick="updateCalculation('3')">3</button>
+			<button class="op" onclick="updateCalculation('+')">+</button>
+		</div>
+
+		<div>
+			<button onclick="updateCalculation('4')">4</button>
+			<button onclick="updateCalculation('5')">5</button>
+			<button onclick="updateCalculation('6')">6</button>
+			<button class="op" onclick="updateCalculation('-')">-</button>
+		</div>
+
+		<div>
+			<button onclick="updateCalculation('7')">7</button>
+			<button onclick="updateCalculation('8')">8</button>
+			<button onclick="updateCalculation('9')">9</button>
+			<button class="op" onclick="updateCalculation('*')">*</button>
+		</div>
+
+		<div>
+			<button onclick="updateCalculation('0')">0</button>
+			<button onclick="updateCalculation('.')">.</button>
+			<button onclick="updateCalculation('=')">=</button>
+			<button class="op" onclick="updateCalculation('/')">/</button>
+		</div>
+
+		<div>
+			<button class="clear" onclick="updateCalculation('clear')">
+				clear
+			</button>
+		</div>
+
+		<script>
+			let calculation = JSON.parse(localStorage.getItem("calculation")); 
+			/*|| {
+				calculation : 0
+			}*/
+
+			function updateCalculation(operator) {
+				if (operator === "=") {
+					calculation = eval(calculation);
+					localStorage.setItem("calculation", JSON.stringify(calculation));
+				} else if (operator === "clear") {
+					calculation = "";
+					console.log(`cleared`);
+					localStorage.setItem("calculation", JSON.stringify(calculation));
+				} else {
+					calculation += operator;
+				}
+				console.log(calculation);
+				localStorage.setItem("calculation", JSON.stringify(calculation));
+			}
+		</script>
+	</body>
+</html>
