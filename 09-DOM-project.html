@@ -29,17 +29,9 @@
 	<body>
 
         <div class="youtube">Youtube Subscribe Button</div>
-        <button class="youtube-button" onclick="
-        const youtubeButton = document.querySelector('.youtube-button');
-
-        if(youtubeButton.innerHTML === 'Subscribe'){
-            youtubeButton.innerHTML = 'Subscribed';
-        }else{
-            youtubeButton.innerHTML = 'Subscribe';
-        }
-        ">
+        <button class="youtube-button" onclick="subscribe();">
         Subscribe</button>
-        
+
         <div style="margin-bottom: 10px;">Rock Paper Scissors</div>
         <a href="">Click here</a>
 
@@ -52,8 +44,20 @@
             <input type="number" style="height: 50px; margin-right: 5px;">
             <button style="background-color: green; color: white;">Calculate</button>
         </div>
-		<script>
 
+		<script>
+            
+            function subscribe (){
+                const youtubeButton = document.querySelector('.youtube-button');
+
+            // innerText is used to removed spaces from both left and right side of the text when apears when using the innerHtml
+
+            if(youtubeButton.innerHTML === 'Subscribe'){
+                youtubeButton.innerHTML = 'Subscribed';
+            }else{
+                youtubeButton.innerHTML = 'Subscribe';
+            }
+            }
         </script>
 		
 	</body>
