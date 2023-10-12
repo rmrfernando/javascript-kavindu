@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>DOM</title>
+        <style>
+
+            .youtube{
+                font-size: 15px;
+                margin-bottom: 20px;
+            }
+            
+            .youtube-button{
+                padding: 8px 12px 8px 12px;
+                border-radius: 25px;
+                background-color: black;
+                color: white;
+                font-weight: bold;
+                border: none;
+                margin-bottom: 50px;
+            }
+            .row{
+                display: flex;
+                flex-direction: row;
+            }
+        </style>
+	</head>
+	<body>
+
+        <div class="youtube">Youtube Subscribe Button</div>
+        <button class="youtube-button" onclick="
+        const youtubeButton = document.querySelector('.youtube-button');
+
+        if(youtubeButton.innerHTML === 'Subscribe'){
+            youtubeButton.innerHTML = 'Subscribed';
+        }else{
+            youtubeButton.innerHTML = 'Subscribe';
+        }
+        ">
+        Subscribe</button>
+        
+        <div style="margin-bottom: 10px;">Rock Paper Scissors</div>
+        <a href="">Click here</a>
+
+
+        <div style="margin-top: 50px; margin-bottom: 20px;">Amazon Shipping Calculator</div>
+        <div>Orders under $40 =+ $10 shipping.</div>
+        <div style="margin-bottom: 20px;">Orders over $40 = FREE Shipping.</div>
+
+        <div class="row">
+            <input type="number" style="height: 50px; margin-right: 5px;">
+            <button style="background-color: green; color: white;">Calculate</button>
+        </div>
+		<script>
+
+        </script>
+		
+	</body>
+</html>
