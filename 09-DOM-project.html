@@ -28,25 +28,36 @@
 	</head>
 	<body>
 
+        <!-- youtube subscribe button -->
+
         <div class="youtube">Youtube Subscribe Button</div>
         <button class="youtube-button" onclick="subscribe();">
         Subscribe</button>
 
+        <!-- Rock paper scissors project -->
+
         <div style="margin-bottom: 10px;">Rock Paper Scissors</div>
         <a href="">Click here</a>
 
+        <!-- Amazon shipping calculator -->
 
         <div style="margin-top: 50px; margin-bottom: 20px;">Amazon Shipping Calculator</div>
         <div>Orders under $40 =+ $10 shipping.</div>
         <div style="margin-bottom: 20px;">Orders over $40 = FREE Shipping.</div>
 
         <div class="row">
-            <input type="number" style="height: 50px; margin-right: 5px;">
-            <button style="background-color: green; color: white;">Calculate</button>
+            <input type="number" id="amount" style="height: 50px; margin-right: 5px;">
+            <button style="background-color: green; color: white;" onclick="
+
+            
+            "
+            >Calculate</button>
         </div>
 
+        <div class="total" style="margin-top: 15px;"></div>
+
 		<script>
-            
+
             function subscribe (){
                 const youtubeButton = document.querySelector('.youtube-button');
 
@@ -57,6 +68,19 @@
             }else{
                 youtubeButton.innerHTML = 'Subscribe';
             }
+            }
+
+            function calculateShipping(){
+                let price = document.getElementById('amount').value;
+                let shipping = 0;
+
+                if(price<40){
+                shipping = 10;
+                }else{
+                    shipping = 0;
+                }
+
+                document.querySelector('.total').innerHTML = `Total amount : $${(parseFloat(price) + parseFloat(shipping)).toString()}`;
             }
         </script>
 		
